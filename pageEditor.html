@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor</title>
+    <style>
+        @keyframes loading {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            height: 98vh;
+            display: flex;
+            align-items: center;
+            animation: loading 1s;
+            animation-timing-function: ease-in-out;
+        }
+        .container{
+            width: 100%;
+        }
+        .name{
+            padding: 40px 0;
+            text-align: center;
+        }
+        hr:first-of-type{
+            width: 50%;
+        }
+        hr{
+            width: 40%;
+        }
+        .tasks{
+            width: fit-content;
+            margin: 0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="name">
+            <h1>Name: Sandaru Bandara </h1>
+            <hr>
+            <h2>Role: Student 02</h2>
+            <hr>
+        </div>
+        <div class="tasks">
+            <h3>Task List:</h3>
+            <ul>
+                <li>Main Page</li>
+                <li>Query Form</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

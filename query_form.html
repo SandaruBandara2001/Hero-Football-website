@@ -1,0 +1,198 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Query Form</title>
+      <style>
+        body {
+            background-image:url(images\\background.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: sans-serif;
+            margin-top: 40px;          
+        }
+        * {
+          margin: 0;
+          padding: 0;
+        }
+        .Qform {
+            width: 800px;
+            background-color:rgb(0,0,0,0.6);
+            margin:auto;
+            color:white;
+            text-align:center;
+            border-radius:15px 15px 0px 0px;
+            padding: 10px 0px 10px 0px;
+        }
+        .main {
+            background-color:white;
+            width:800px;
+            margin:auto;
+            height:380px;
+            border-radius:0px 0px 15px 15px;
+        }
+        form {
+            padding:10px;
+        }
+        .sub {
+            margin-left: 25px;
+            margin-top:30px;
+            margin-bottom:30px;
+            font-size:15px;
+            font-weight:500;
+        }
+        .name {
+            position:relative;
+            left:120px;
+            top:-5px;
+            line-height:40px;
+            border-radius:6px;            
+            font-size: 16px;
+            padding: 0 22px;            
+        }
+        label { 
+            font-family: sans-serif;
+            font-size:24px;
+        }
+        .email {
+            position:relative;
+            left:18px;
+            line-height:40px;
+            border-radius:6px;
+            width:480px;
+            font-size: 16px;
+            color:#555;
+            padding: 0 18px;
+        }
+        
+        .radio1,.radio2, .radio3 {
+            width:65px;
+            height:20px;
+            border-radius:50px;
+            cursor:pointer;
+            outline:none;
+        }
+        .details {
+            position:relative;
+            left:44px;
+            line-height:40px;
+            border-radius:6px;
+            width:480px;
+            font-size: 16px;
+            color:#555;
+            padding: 0 18px;
+        }
+        .view {
+            height: 43px;
+            width: 180px;
+            position: absolute;
+            top: 410px;
+            right: 43.5%;
+            color:black;    
+        }
+        .view a {       
+            color:gray;
+        }
+        .view:hover {
+        }
+        .footer {
+              width : 30%;
+              position:absolute;
+              bottom:2%;
+              right:0%;
+              text-align:center;
+        }
+        .footer h3  {
+              font-size: 18px;
+              color:#fff;
+        }
+        .footer a {
+              color: #fff;
+        }
+        </style>
+    </head>
+      <body>        
+        <div class="Qform"><h1>Query Form</h1></div>
+        <div class="main">
+        <form id="myform" action="display.html" onsubmit="return Validation();" method = "POST">
+          <div class ="sub">
+            <br>
+            <label for="name">Name :</label>          
+            <input class ="name" type="text" placeholder="Enter Your Name" id="name">
+            <br>
+            <br>          
+            <label for="email">Email Address :</label>        
+            <input class ="email" type="text" size="30" placeholder="Enter Your Email" id="email">
+            <br>
+            <br>            
+            <label>Query Subject  :</label>           
+            <input class="radio1" type="radio" name="subject" id="delivery" value="Delivery">
+            <label> Delivery</label>
+            <input class="radio2" type="radio" name="subject" id="refund" value="Refund">
+            <label> Refund</label>
+            <input class="radio3" type="radio" name="subject" id="payment" value="Payment">
+            <label> Payment </label>
+            <br>
+            <br>
+            <label id="details">Query Detail :</label>
+            <input class="details" type="text" size="30" placeholder="Details" id="queryDetail">
+            <br><br>
+            <input class="view" type="submit" name="submit" Value="View Query" onclick="manageSubmit()">
+          </div>
+        </form>
+        </div>
+        <div class="footer">
+          <h3>Page Editor : <a href="pageEditor.html"> sandaru bandara</a> <br> Last Edited : 3/23/2022</h3>
+        </div>
+      <script>
+        function Validation() {
+
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var queryDetail = document.getElementById("queryDetail").value;
+          var email_Reg =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+          if (name != '' && email != '' && queryDetail != ''){
+            if (email.match(email_Reg)) {
+              if (document.getElementById("delivery").checked || document.getElementById("refund").checked || document.getElementById("payment").checked) {
+              }
+              else {
+                alert("You must select Query Subject");
+              return false;
+              }
+            }
+            else {
+              alert("Invalid Email Address");
+            return false;
+            }
+          } 
+          else {
+            alert("All fields are required");
+          return false;
+          }
+        }
+        function manageSubmit() {
+          var subject = document.getElementsByName('subject');
+          var subject_value;
+          for(var i = 0; i < subject.length; i++){
+            if(subject[i].checked){
+              subject_value = subject[i].value;
+            }
+          } 
+          
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const detail = document.getElementById('queryDetail').value;
+          const subjects = subject_value;
+          
+          sessionStorage.setItem("NAME", name);
+          sessionStorage.setItem("EMAIL", email);
+          sessionStorage.setItem("SUBJECT", subjects);
+          sessionStorage.setItem("DETAIL", detail);
+  
+          return;
+        }
+      </script>
+      </body>
+  </html>

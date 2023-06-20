@@ -1,0 +1,183 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Query Form</title>
+			<style>
+				body {
+					  background-image:url(images\\background.jpg);
+					  background-size: cover;
+					  background-attachment: fixed;
+					  background-position: center;
+					  font-family: sans-serif;
+					  margin-top: 40px;					 
+				}
+				* {
+					margin: 0;
+					padding: 0;
+				}
+				.Qform {
+						width: 800px;
+						background-color:rgb(0,0,0,0.6);
+						margin:auto;
+						color:white;
+						text-align:center;
+						border-radius:15px 15px 0px 0px;
+						padding: 10px 0px 10px 0px;
+				}
+				.main {
+						background-color: white;
+						width:800px;
+						margin:auto;
+						height:380px;
+						border-radius:0px 0px 15px 15px;
+				}
+				form {
+						padding:10px;
+				}
+				.sub {
+						margin-left: 25px;
+						margin-top:30px;
+						margin-bottom:30px;
+						font-size:18px;
+						font-weight:700;
+				}
+				.name {
+						position:relative;
+						left:120px;
+						top:-5px;
+						line-height:40px;
+						border-radius:6px;						
+						font-size: 16px;
+						padding: 0 22px;						
+				}
+				label { 
+						font-family: sans-serif;
+						font-size:24px;
+				}
+				.email {
+						position:relative;
+						left:18px;
+						line-height:40px;
+						border-radius:6px;
+						width:480px;
+						font-size: 16px;
+						color:#555;
+						padding: 0 18px;
+				}
+				
+				.radio1,.radio2, .radio3 {
+						width:65px;
+						height:20px;
+						border-radius:50px;
+						cursor:pointer;
+						outline:none;
+				}
+				.details {
+						position:relative;
+						left:44px;
+						line-height:40px;
+						border-radius:6px;
+						width:480px;
+						font-size: 16px;
+						color:#555;
+						padding: 0 18px;
+				}
+				.view {
+						height: 43px;
+			            width: 180px;
+			            position: absolute;
+			            top: 410px;
+			            right: 25%;
+			            color:black; 
+						top: 410px;
+						right: 33.5%;
+						display: grid;
+						place-items: center;
+						background: black ;
+						font-family:sans-serif;
+						font-size:18px;
+						color:white;
+				}
+				.view a {				
+						color:white;
+				}
+				.edit {
+						height: 43px;
+						width: 180px;
+						position: absolute;
+						top: 410px;
+						left: 33.5%;
+						display: grid;
+						place-items: center;						
+						font-family:sans-serif;
+						font-size:18px;
+						color: black;
+				}
+				.edit a {				
+						color: white;
+				}
+				.footer {
+							width : 30%;
+							position:absolute;
+							bottom:2%;
+							right:0%;
+							text-align:center;
+				}
+				.footer h2  {
+							font-size: 18px;
+							color:#fff;
+				}
+				.footer a {
+							color: #fff;
+				}
+				</style>
+				<script>
+					window.addEventListener('load', () => {
+						
+						const name = sessionStorage.getItem('NAME');
+						const email = sessionStorage.getItem('EMAIL');
+						const qrySubject = sessionStorage.getItem('SUBJECT');
+						const qryDetail = sessionStorage.getItem('DETAIL');
+						
+						document.getElementById('result-name').innerHTML = name;
+						document.getElementById('result-email').innerHTML = email;
+						document.getElementById('result-qrySubject').innerHTML = qrySubject;
+						document.getElementById('result-qryDetail').innerHTML = qryDetail;
+
+					})
+				</script>
+		</head>
+		
+			<body>				
+				<div class="Qform"><h1> Summery </h1></div>
+				<div class="main">
+				<form id="myform" method = "POST">
+					<div class ="sub">
+						<br>
+						<label id="name">Name : <span id="result-name"></span></label>					
+						
+						<br>
+						<br>					
+						<label id="email">Email Address : <span id="result-email"></span></label>				
+						
+						<br>
+						<br>									
+						<label id="subj">Query Subject : <span id="result-qrySubject"></span></label>		
+						<br>
+						<br>
+						<label id="details">Query Detail : <span id="result-qryDetail"></span></label>
+						<br><br>						
+						<input class="edit" type="button" name="edit" Value="Edit" onclick="history.back()">
+						<br><br>
+						<a href="mailto:sandaru.20200649@iit.ac.lk" class="view">Send</a>
+						<br><br>
+					</div>
+				</form>
+				</div>
+				<div class="footer">
+					<h2>Page Editor :<a href="pageEditor.html"> sandaru bandara</a><br> Last Edited : 3/23/2022</h2>
+				</div>
+			</body>
+			
+	</html>

@@ -1,0 +1,177 @@
+@media (max-width:700px){
+			.navigation-bar{
+				flex-direction: column;
+			}
+			.logo{
+				text-align: center;
+				width:50px;
+				height:160px;
+			}
+			.navbar-list ul{
+				flex-direction: column;
+				text-align: center;
+			}
+		}
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		body {
+			font-family: arial;
+			background-image: url("images\\background.jpg");
+			background-size:cover;
+			background-repeat:no-repeat;
+		}
+		.navigation-bar{
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			padding: 10px 30px;
+			background: white;
+			overflow: hidden;
+		}
+		.logo{
+			font-size: 10px;
+			flex: 1;
+			font-weight: bold;
+		}
+		.navbar-list{
+			flex: 1;
+		}
+		.navbar-list ul {
+			list-style: none;
+			display: flex;
+			gap: 2rem;
+			justify-content: flex-end;
+			margin: 10px 0;
+			font-size: 20px;
+		}
+		.navbar-list ul li {
+			padding: 0 10px;
+			font-weight: bold;
+		}
+
+		.navbar-list ul li:hover {
+			transform: scale(1.1);
+			transition: transform 0.5s;
+		}
+/*....... content start .......*/
+
+		.content
+		{
+			position:relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-left: 5%;
+		}
+
+		.content .textbox
+		{
+			position: relative;
+			max-width: 600px;
+			text-align: left;
+
+		}
+
+		.content .textBox h2
+		{
+			margin-top: 100px;
+			color: white;
+			font-size: 4em;
+			line-height:1.5em;
+			font-weight: 900;
+			font-style: italic;
+			text-transform: uppercase;
+		}
+
+		.content .textBox h2 span
+		{
+			color: yellow;
+			font-style: italic;
+		}
+
+		.content .textBox h3
+
+		{
+	   		margin-top: 80px;
+	   		font-size: 3em;
+	   		color: white;
+			line-height:1.5em;
+			font-weight: 900;
+			text-transform: capitalize;
+   		}
+
+   		.content .textBox p
+   		{
+    		margin-bottom: 100px;
+    		font-style: italic;
+    		color:white;
+    		font-size: 1.3em;
+			line-height:1.5em;
+			font-weight: 900;
+    		text-transform:uppercase;
+
+		}
+		.content .textBox a
+		{
+		    display: inline-block;
+		    margin-top: 20px;
+		    padding: 7px 20px;
+		    background: #fff;
+		    color:black;
+		    border-radius: 40px;
+		    font-weight:bold;
+		    letter-spacing: 1px;
+		    text-decoration:none;
+		    text-transform: uppercase;
+		    transform: 1s all;
+		}
+			.content .textBox a:hover
+		{
+			transform: scale(1.2);
+		}
+
+/*....... social midea buttons.......*/
+
+		.socialm
+		{
+			  text-align: cente;
+			  margin: 180px auto;
+			  justify-content: space-around;
+			  display: flex;
+			  max-width: 7500px;
+			  align-items:center;
+			}
+			.socialm a
+			{
+			  text-decoration: none;
+			  font-size: 28px;
+			  width: 60px;
+			  height: 60px;
+			  text-align: center;
+			  transition: 0.4s all;
+			  line-height: 58px;
+			  cursor: pointer;
+			  background: #314652;
+			  border-radius: 50%;
+			}
+			.socialm a:hover{
+			  transform: scale(1.2);
+			}
+
+			.footer 
+			{
+              text-align:center;
+              right: 0%;
+              color: white;
+             }
+
+            .footer a
+            {
+            	color: white;
+            }
